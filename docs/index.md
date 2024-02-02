@@ -16,7 +16,11 @@ Allow people to create their agencies with AI and build a self expanding system,
 
 Differences between agency swarm and Autogen.
 
- Agency Swarm does not write prompts for you
+### Differences between Autogen and Agency swarm.
+
+AutoGen recreated from scratch using just five or six functions with the new OpenAI Assistants API. Here is their famous example, featuring a chart of YTD, Meta, and Tesla stock prices, that was made by this system, consisting of just 2 agents: a coding assistant and a user proxy agent. But the best part is that this system is much more controllable and customizable, which means unlike autogen, it is actually deployable in production.
+
+Agency Swarm does not write prompts for you
 - It includes automatic type checking with instructor
 - It is build on top of the latest OpenAI Assistants API (OpenAI is extremely likely to include more exciting features soon)
 - It allows you to easily define communication flows
@@ -55,7 +59,7 @@ Convert from OpenAPI schemas:
 
 Start by defining the roles of your agents. For example, a CEO agent for managing tasks and a developer agent for executing tasks.
 
-```python
+```py 
 from agency_swarm import Agent
 
 ceo = Agent(name="CEO",
