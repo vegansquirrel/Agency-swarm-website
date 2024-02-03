@@ -1,27 +1,15 @@
-# Examples
+## Quick Start
 
-### Web browsing Agent
+- Short description of how to install and create a simple agency with simple tools
 
-Example From The Video
-Testing oai-widget.com
+### [Assistant API](https://platform.openai.com/docs/assistants/overview/agents)  working
 
-```py
-from agency_swarm import set_openai_key
-set_openai_key("YOUR_OPENAI_API_KEY")
-```
-```py
-from agency_swarm.agents.browsing import BrowsingAgent
-from agency_swarm import Agency, Agent
-browsing_agent = BrowsingAgent()
-qa_manager = Agent(name="QA Manager",
-            description="The QA Manager Agent is an advanced digital entity designed to oversee and enhance the quality of processes for our SaaS product.",
-            instructions="As a Quality Assurance (QA) Manager, your role involves direct interaction and oversight of the BrowsingAgent's operations. Your primary duty is to guarantee that the user's task is comprehensively and accurately completed. Achieve this by methodically issuing each step of the task as a distinct message to the BrowsingAgent. It's crucial to confirm the successful execution of one step before advancing to the next. This procedure forms part of an integration test, which will be conducted in a live production environment. Importantly, ensure to provide the BrowsingAgent with the actual credentials related to the task, enabling authentic testing scenarios.")
-agency = Agency([qa_manager,
-                 [qa_manager, browsing_agent]])
-```
+The [Assistant API](https://platform.openai.com/docs/assistants/overview/agents) working is quite different from the previous chat completions approach. In this new api, there are threads that represent conversations, messages that represent individual messages within the threads, and agents that execute the threads to generate new messages.
+I know it can be confusing. So, the general process is as follows: 
 
-
-```py
-demo = agency.demo_gradio(height=700) # reload the notebook each time you run this cell
-
-```
+1. First, you have to create an agent. 
+2. Then, you have to create a thread. 
+3. Next, you have to add a message to the thread. 
+4. After that, you have create a run for this thread and agent ids. 
+The big change here is that runs execute asynchronously, so you have to continuously check for the updates until the run is finished. 
+5. And finally, once that's done, if the run is in completed status, the run goes into requires_action or completed status. 
