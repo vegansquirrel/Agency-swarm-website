@@ -7,10 +7,12 @@ This document provides guidelines for contributing new agents and tools to the f
 ### Folder Structure for Tools
 Tools should be added in the agency_swarm/tools/{category}/ directory like below.
 Each tool should be in its specific category folder like coding, browsing, investing etc.
+
 Your tool file should be named YourNewTool.py.
 Tests should be added in agency_swarm/tests/test_tools.py.
 Directory structure for a new tool:
-```
+
+```py
 agency_swarm/tools/your-tool-category/
 │
 ├── YourNewTool.py          # The main agent class file
@@ -18,11 +20,11 @@ agency_swarm/tools/your-tool-category/
 ```
 ### Adding Tests For Your Tools
 For each tool, please add the following test case in agency_swarm/tests/test_tools.py:
-
+```py
     def test_my_tool_example(self):
         output = MyCustomTool(query='John Doe').run()
         self.assertFalse("error" in output.lower())
-
+```
 ### Folder Structure for Agents
 
 Agents should be placed in agency_swarm/agents/{category}/ directory.
