@@ -83,11 +83,3 @@ ceo = Agent(name="CEO",
 ```
 
 Import from existing agents:
-
-### Agencies
-
-- How to define communication flows, shared instructions
-- How to run a demo or how to get a completion
-- How to import existing agencies
-
-- Contributing
