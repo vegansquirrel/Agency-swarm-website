@@ -2,7 +2,6 @@
 
 ### [Assistant API](https://platform.openai.com/docs/assistants/overview/agents) working
 
-
 The Assistant API is quite different from the previous chat completions approach. In this new Api, there are threads that represent conversations, messages that represent individual messages within the threads, and agents that execute the threads to generate new messages.
 It can be a bit confusing. So, the general process is as follows: 
 1. Create an agent. 
